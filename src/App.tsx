@@ -1,20 +1,19 @@
 import * as React from 'react';
-import './App.css';
-
-const logo = require('./logo.svg');
+import { Route } from 'react-router-dom';
+import { Switch } from 'react-router';
+import Main from '../src/components/pages/main';
+import Calc from '../src/components/pages/calc';
+import Todo from '../src/components/pages/todo';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <Switch>
+        <Route exact={true} path={'/'} component={Main}/>
+        <Route exact={true} path={'/main'} component={Main}/>
+        <Route exact={true} path={'/todo'} component={Calc}/>
+        <Route exact={true} path={'/calc'} component={Todo}/>
+      </Switch>
     );
   }
 }

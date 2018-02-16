@@ -18,7 +18,7 @@ export const styles = {
       backgroundColor: 'grey',
       margin: 0,
       paddingLeft: 30,
-      height: 80,
+      minimumHeight: 80,
       display: 'flex',
       alignItems: 'center',
     },

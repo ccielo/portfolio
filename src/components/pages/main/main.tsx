@@ -1,23 +1,15 @@
 import * as React from 'react';
 import Header from '../../organisms/header';
-import { History } from 'history';
+import { ExpendingDivProps, MainProps, MainStates } from './types';
 import { styles } from './styles';
-
-export interface MainProps {
-  history: History;
-}
-
-export interface ExpendingDivProps {
-  onClick: (idx: number, selected: boolean) => void;
-  selected: boolean;
-  idx: number;
-}
 
 const issueList = [
   {
     id: 'issue001',
-    issueTitle: 'issue',
-    howToSolve: 'howToSolve',
+    issueTitle: 'styled-component & jest',
+    howToSolve: `Problem: Cannot find module \n
+                'styled-components/lib/models/StyleSheet' from 'utils.js'\n
+                Solved: npm install jest-styled-components@next`,
     complete: true,
     selected: false,
   },
@@ -28,30 +20,18 @@ function ExpendingDiv(props: ExpendingDivProps) {
     <div onClick={() => props.onClick(props.idx, props.selected)}>
       <div style={styles.expendingDiv.titleContainer}>
         <p style={styles.expendingDiv.titleText}>
-          [{props.idx + 1}] issue title
+          [{props.idx + 1}] {props.list.issueTitle}
         </p>
       </div>
       {props.selected &&
         <div style={styles.expendingDiv.contentContainer}>
-          <p style={{margin: 0}}>
-            solve
+          <p style={{margin: 0, whiteSpace: 'pre'}}>
+          {props.list.howToSolve}
           </p>
         </div>
       }
     </div>
   );
-}
-
-export interface IssueListType {
-  id: string;
-  issueTitle: string;
-  howToSolve: string;
-  complete: boolean;
-  selected: boolean;
-}
-
-export interface MainStates {
-  issueList: Array<IssueListType>;
 }
 
 class Main extends React.Component<MainProps, MainStates> {
@@ -87,6 +67,7 @@ class Main extends React.Component<MainProps, MainStates> {
               <ExpendingDiv
                 key={idx}
                 idx={idx}
+                list={list}
                 onClick={this.toggleExpending}
                 selected={list.selected}
               />

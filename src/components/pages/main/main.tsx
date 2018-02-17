@@ -13,6 +13,16 @@ const issueList = [
     complete: true,
     selected: false,
   },
+  {
+    id: 'issue002',
+    issueTitle: 'resize : font-size',
+    howToSolve: `Problem: 폰트가 컨테이너에맞게 responsive 방법 \n
+                 React-Native 의 경우에는 'allowFontScaling'로 적용하지만, \n
+                 CSS의 경우 font-size를 변경하는 방식을 찾아한다.
+                `,
+    complete: false,
+    selected: false,
+  },
 ];
 
 function ExpendingDiv(props: ExpendingDivProps) {
@@ -26,7 +36,7 @@ function ExpendingDiv(props: ExpendingDivProps) {
       {props.selected &&
         <div style={styles.expendingDiv.contentContainer}>
           <p style={{margin: 0, whiteSpace: 'pre'}}>
-          {props.list.howToSolve}
+            {props.list.howToSolve}
           </p>
         </div>
       }

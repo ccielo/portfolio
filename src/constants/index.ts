@@ -6,3 +6,30 @@ export const react = 'https://cdn.iconscout.com/public/images/icon/free/png-512/
 // route path
 export const calc = '/calc';
 export const todo = '/todo';
+
+// calculator page
+export const SYMBOL_TYPE = {
+  PLUS: '+',
+  MINUS: '-',
+  MULTIPLE: '*',
+  DIVIDE: '/',
+};
+
+export const symbolList = [
+  {
+    type: SYMBOL_TYPE.PLUS,
+    text: '+',
+  },
+  {
+    type: SYMBOL_TYPE.MINUS,
+    text: '-',
+  },
+  {
+    type: SYMBOL_TYPE.MULTIPLE,
+    text: '*',
+  },
+  {
+    type: SYMBOL_TYPE.DIVIDE,
+    text: '/',
+  },
+];

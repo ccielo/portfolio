@@ -11,8 +11,8 @@ class App extends React.Component {
       <Switch>
         <Route exact={true} path={'/'} component={Main}/>
         <Route exact={true} path={'/main'} component={Main}/>
-        <Route exact={true} path={'/todo'} component={Calc}/>
-        <Route exact={true} path={'/calc'} component={Todo}/>
+        <Route exact={true} path={'/calc'} component={Calc}/>
+        <Route exact={true} path={'/todo'} component={Todo}/>
       </Switch>
     );
   }

@@ -1,10 +1,12 @@
 import { Reducer, combineReducers } from 'redux';
-import calculateReducer, { CalculateTypes } from './calculate';
+import todoReducer, { TodoListTypes } from './todoList';
 
 export interface RootState {
-  calculator: CalculateTypes;
+  todoList: TodoListTypes;
 }
 
-export const rootReducer: Reducer<RootState> = combineReducers<RootState>({
-  calculator: calculateReducer,
+const rootReducer: Reducer<RootState> = combineReducers<RootState>({
+  todoList: todoReducer,
 });
+
+export default rootReducer;

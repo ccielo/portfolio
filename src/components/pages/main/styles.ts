@@ -15,7 +15,7 @@ export const styles = {
       fontSize: 20,
     },
     contentContainer: {
-      backgroundColor: 'grey',
+      backgroundColor: '#E6E6E6',
       margin: 0,
       paddingLeft: 30,
       minimumHeight: 80,

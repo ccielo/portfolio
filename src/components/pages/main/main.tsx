@@ -23,6 +23,18 @@ const issueList = [
     complete: false,
     selected: false,
   },
+  {
+    id: 'issue003',
+    issueTitle: 'val( ) is evil',
+    howToSolve: `Problem: calculator를 만드는과정에서 A symbol B \n
+                 의 방식으로 binding 된 function으로 만든후, \n
+                 4가지 case를 한번에 묶는 것에 대한 refactoring에 대해 고려중.\n
+                 검색 결과는 new function() or eval()을 이용하여 string을 계산하는 방식 \n
+                 하지만, typescript 와 js에서 추천하지않는 방식이기에 어떤식이 좋을지 찾아야한다.
+                `,
+    complete: false,
+    selected: false,
+  },
 ];
 
 function ExpendingDiv(props: ExpendingDivProps) {

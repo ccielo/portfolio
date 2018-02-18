@@ -4,13 +4,18 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import createHistory from 'history/createBrowserHistory';
 import { Router } from 'react-router';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './redux/reducers';
 
 const history = createHistory();
-
+const store = createStore(rootReducer);
 ReactDOM.render(
-  <Router history={history}>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    <Router history={history}>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

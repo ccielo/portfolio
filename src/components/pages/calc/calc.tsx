@@ -28,29 +28,53 @@ class Calc extends React.Component<CalcProps, CalcStates> {
     this.setState({numberPad: newState});
   }
 
+// string <-> number, string <-> number, switch 시 일때 value reset.
+// 4번 반복되는 불필요한 switch 문을 빼는 방식 - 조사: val(), new function() 이외.
   calculate() {
     const calc = this.state.value;
     let first = parseInt(calc['firstValue'], 10);
     let second = parseInt(calc['secondValue'], 10);
     let newResult = 0;
+    
     switch (this.state.symbol) {
       case SYMBOL_TYPE.PLUS:
         newResult = first + second;
-        return this.setState({result: newResult.toString()});
+        let plusValue = this.state.isFirst ?
+        {firstValue: newResult.toString(), secondValue: ''} : {firstValue: '', secondValue: newResult.toString()};
+        return this.setState({
+          result: newResult.toString(),
+          value: plusValue,
+        });
       case SYMBOL_TYPE.MINUS:
         newResult = first - second;
-        return this.setState({result: newResult.toString()});
+        let minusValue = this.state.isFirst ?
+        {firstValue: newResult.toString(), secondValue: ''} : {firstValue: '', secondValue: newResult.toString()};
+        return this.setState({
+          result: newResult.toString(),
+          value: minusValue,
+        });
       case SYMBOL_TYPE.MULTIPLE:
         newResult = first * second;
-        return this.setState({result: newResult.toString()});
+        let multiValue = this.state.isFirst ?
+        {firstValue: newResult.toString(), secondValue: ''} : {firstValue: '', secondValue: newResult.toString()};
+        return this.setState({
+          result: newResult.toString(),
+          value: multiValue,
+        });
       case SYMBOL_TYPE.DIVIDE:
         newResult = first / second;
-        return this.setState({result: newResult.toString()});
+        let divideValue = this.state.isFirst ?
+        {firstValue: newResult.toString(), secondValue: ''} : {firstValue: '', secondValue: newResult.toString()};
+        return this.setState({
+          result: newResult.toString(),
+          value: divideValue,
+        });
       default:
         return newResult;
     }
   }
-  
+
+// value input: conditon => 0 이 반복되지 않게 한다. && print 를 보여준다.
   onChange(value: number) {
     let newValue = {...this.state.value};
     let trigger = this.state.isFirst ? 'firstValue' : 'secondValue';
@@ -61,6 +85,7 @@ class Calc extends React.Component<CalcProps, CalcStates> {
     this.setState({result: newValue[trigger]});
   }
 
+// decimal point : condition => 시작지점일때 반복되지 않는다. 
   onDecimal() {
     let newValue = {...this.state.value};
     let trigger = this.state.isFirst ? 'firstValue' : 'secondValue';
@@ -69,6 +94,7 @@ class Calc extends React.Component<CalcProps, CalcStates> {
     this.setState({value: newValue});
   }
 
+// click symbol : switch target value
   onSwitchPad(symbol: string) {
     let newValue = {...this.state.value};
     let trigger = this.state.isFirst ? 'firstValue' : 'secondValue';

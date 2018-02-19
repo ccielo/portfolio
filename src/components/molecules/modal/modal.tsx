@@ -11,12 +11,16 @@ export interface ModalProps {
 class Modal extends React.Component<ModalProps> {
   render() {
     return (
-      <div>
+      <div className="modal-container">
         {this.props.isShow &&
-        <div style={styles.backdropStyles}>
+        <div
+          style={styles.backdropStyles}
+          className="backdrop-container"
+        >
           <div
             style={styles.modalStyles}
             onClick={this.props.onClick}
+            className="modal-children"
           >
             {this.props.children}
           </div>

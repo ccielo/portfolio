@@ -33,3 +33,19 @@ export const symbolList = [
     text: '/',
   },
 ];
+
+// route path
+export const routePathList = [
+  {
+    pathName: 'main',
+    icon: react,
+  },
+  {
+    pathName: 'calc',
+    icon: barcelona,
+  },
+  {
+    pathName: 'todo',
+    icon: seoul,
+  },
+];

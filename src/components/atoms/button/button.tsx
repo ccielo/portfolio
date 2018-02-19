@@ -11,6 +11,7 @@ export interface ButtonProps {
 function Button(props: ButtonProps) {
   return(
     <div
+      className="button-container"
       style={{
         backgroundColor: props.color,
         width: props.size ? props.size : 50,
@@ -19,7 +20,7 @@ function Button(props: ButtonProps) {
       }}
       onClick={props.onClick}
     >
-      <p style={{color: 'white'}}>{props.label}</p>
+      <p className="button-text" style={{color: 'white'}}>{props.label}</p>
     </div>
   );
 }

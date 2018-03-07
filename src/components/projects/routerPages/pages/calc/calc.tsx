@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Header from '../../organisms/header';
 import { CalcProps, CalcStates } from './types';
-import { symbolList, SYMBOL_TYPE } from '../../../constants';
+import { symbolList, SYMBOL_TYPE } from '../../../../../constants';
 import { NumberPadSection, PadSection, AnswerSection } from './components';
 
 class Calc extends React.Component<CalcProps, CalcStates> {

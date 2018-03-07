@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { configure } from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
-import Modal from '../../../components/molecules/modal';
+import Modal from '../../../components/projects/routerPages/molecules/modal';
 
 configure({ adapter: new Adapter() });
 

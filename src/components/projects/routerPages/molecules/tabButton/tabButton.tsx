@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FlexContainer, FlexContainerProps } from '../../../utils';
+import { FlexContainer, FlexContainerProps } from '../../../../../utils';
 import { Icon, Paragraph } from './styles';
 
 export interface TabButtonPros {

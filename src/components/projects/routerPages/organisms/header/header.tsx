@@ -2,7 +2,7 @@ import * as React from 'react';
 import { History } from 'history';
 import { HeaderProps, HeaderStates } from './types';
 import { StyledHeader, RouteButtonContainer } from './components';
-import { routePathList } from '../../../constants/';
+import { routePathList } from '../../../../../constants/';
 
 class Header extends React.Component<HeaderProps, HeaderStates> {
   constructor(props: HeaderProps) {

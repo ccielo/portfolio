@@ -3,7 +3,8 @@ import 'jest-styled-components';
 import { shallow } from 'enzyme';
 import { configure } from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
-import TabButton from '../../../components/molecules/tabButton';
+import TabButton from '../../../components/projects/routerPages/molecules/tabButton';
+
 configure({ adapter: new Adapter() });
 
 const props = {

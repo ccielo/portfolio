@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router';
-import Main from '../src/components/pages/main/';
-import Calc from '../src/components/pages/calc';
-import Todo from '../src/components/pages/todo';
+import Main from '../src/components/projects/routerPages/pages/main/';
+import Calc from '../src/components/projects/routerPages/pages/calc';
+import Todo from '../src/components/projects/routerPages/pages/todo';
 import SNS from '../src/components/projects/socialMedia/components/pages/main';
 
 class App extends React.Component {

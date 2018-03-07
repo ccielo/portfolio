@@ -2,8 +2,8 @@ import * as React from 'react';
 import Header from '../../organisms/header';
 import Modal from '../../molecules/modal';
 import { connect } from 'react-redux';
-import { AddItem } from '../../../redux/actions/todoList';
-import { RootState } from '../../../redux/reducers/'; 
+import { AddItem } from '../../../../../redux/actions/todoList';
+import { RootState } from '../../../../../redux/reducers/'; 
 import { TodoProps, TodoStates, ListProps } from './types';
 import { ButtonList, ChildrenComponent } from './components';
 

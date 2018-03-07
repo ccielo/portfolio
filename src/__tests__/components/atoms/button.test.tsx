@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { configure } from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
-import Button from '../../../components/atoms/button';
+import Button from '../../../components/projects/routerPages/atoms/button';
 
 configure({ adapter: new Adapter() });
 

@@ -1,4 +1,4 @@
-import { AddItem } from '../../../redux/actions/todoList';
+import { AddItem } from '../../../../../redux/actions/todoList';
 import { History } from 'history';
 
 export interface TodoListProps {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ProfileElements, INFO_TYPE } from './types';
 import ProfileHeader from './components/profileHeader';
+import GridList from './components/gridList';
 
 interface MainProps {
 }
@@ -21,6 +22,7 @@ class Main extends React.Component<MainProps, MainStates> {
         following: 0,
         nickName: '',
         intro: '',
+        list: [],
       },
     };
   }
@@ -42,6 +44,7 @@ class Main extends React.Component<MainProps, MainStates> {
     return (
       <div>
         <ProfileHeader profileImage={profileImage} profile={profile} ArrayCounting={ArrayCounting} />
+        <GridList postImageList={this.state.profile.list} />
       </div>
     );
   }

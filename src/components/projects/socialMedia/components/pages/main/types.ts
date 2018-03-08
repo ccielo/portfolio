@@ -6,6 +6,7 @@ export interface ProfileElements {
   following: number;
   nickName: string;
   intro: string;
+  list: Array<PostImageProperties>;
 }
 
 export interface InfoProperties {
@@ -23,4 +24,14 @@ export interface ProfileHeaderProps {
   profileImage: string;
   profile: ProfileElements;
   ArrayCounting: Array<{label: string, number: number}>;
+}
+
+export interface PostImageProperties {
+  thumbnailSrc: string;
+  comments: number;
+  liked: number;
+}
+
+export interface GridListProps {
+  postImageList: Array<PostImageProperties>;
 }

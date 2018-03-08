@@ -5,5 +5,42 @@
   "followers": 20,
   "following": 30,
   "nickName": "Minwoo Roh",
-  "intro": " # 풍경 , 디자인 , 내맴. Viví en BCN"
+  "intro": " # 풍경 , 디자인 , 내맴. Viví en BCN",
+  "list": [
+    {
+      "thumbnailSrc": "./assets/images/posting004.png",
+      "comments": 3,
+      "liked": 10
+    },
+    {
+      "thumbnailSrc": "./assets/images/posting005.png",
+      "comments": 3,
+      "liked": 10
+    },
+    {
+      "thumbnailSrc": "./assets/images/posting006.png",
+      "comments": 3,
+      "liked": 10
+    },
+    {
+      "thumbnailSrc": "./assets/images/posting007.png",
+      "comments": 3,
+      "liked": 10
+    },
+    {
+      "thumbnailSrc": "./assets/images/posting008.png",
+      "comments": 3,
+      "liked": 10
+    },
+    {
+      "thumbnailSrc": "./assets/images/posting009.png",
+      "comments": 3,
+      "liked": 10
+    },
+    {
+      "thumbnailSrc": "./assets/images/posting010.png",
+      "comments": 3,
+      "liked": 10
+    }
+  ]
 }

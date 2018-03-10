@@ -2,12 +2,15 @@ import * as React from 'react';
 import { ProfileElements, INFO_TYPE } from './types';
 import ProfileHeader from './components/profileHeader';
 import GridList from './components/gridList';
+import Line from '../../atoms/line';
+import Tab from '../../atoms/tab';
 
 interface MainProps {
 }
 
 interface MainStates {
   profile: ProfileElements;
+  tab: number;
 }
 
 class Main extends React.Component<MainProps, MainStates> {
@@ -24,6 +27,7 @@ class Main extends React.Component<MainProps, MainStates> {
         intro: '',
         list: [],
       },
+      tab: 0,
     };
   }
 
@@ -40,14 +44,36 @@ class Main extends React.Component<MainProps, MainStates> {
       {label: INFO_TYPE.followers, number: profile.followers},
       {label: INFO_TYPE.following, number: profile.following},
     ];
+    const PostComponent = <GridList postImageList={this.state.profile.list} />;
+    const SavedComponent = <div>saved component</div>;
 
     return (
-      <div>
+      <div style={{width: '833px'}}>
         <ProfileHeader profileImage={profileImage} profile={profile} ArrayCounting={ArrayCounting} />
+        <Line color="gray" thickness={1} length="100%" />
+        <Tab
+          arrayList={[
+            {
+              label: 'first',
+              children: PostComponent,
+            },
+            {
+              label: 'second',
+              children: SavedComponent,
+            }
+          ]}
+          onSelect={this.onSelectTab}
+        />
         <GridList postImageList={this.state.profile.list} />
       </div>
     );
   }
+
+  private onSelectTab = (value: number) => {
+    alert(`hi, ${value}`);
+    this.setState({tab: value});
+  }
+
 }
 
 export default Main;

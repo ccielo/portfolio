@@ -7,7 +7,7 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     width: 833,
-    margin: 10,
+    marginTop: 10,
     justifyContent: 'space-between',
   },
 } as React.CSSProperties;

@@ -8,36 +8,43 @@
   "intro": " # 풍경 , 디자인 , 내맴. Viví en BCN",
   "list": [
     {
+      "postId": "cieloPost001",
       "thumbnailSrc": "./assets/images/posting004.png",
       "comments": 3,
       "liked": 10
     },
     {
+      "postId": "cieloPost002",
       "thumbnailSrc": "./assets/images/posting005.png",
       "comments": 3,
       "liked": 10
     },
     {
+      "postId": "cieloPost003",
       "thumbnailSrc": "./assets/images/posting006.png",
       "comments": 3,
       "liked": 10
     },
     {
+      "postId": "cieloPost004",
       "thumbnailSrc": "./assets/images/posting007.png",
       "comments": 3,
       "liked": 10
     },
     {
+      "postId": "cieloPost005",
       "thumbnailSrc": "./assets/images/posting008.png",
       "comments": 3,
       "liked": 10
     },
     {
+      "postId": "cieloPost006",
       "thumbnailSrc": "./assets/images/posting009.png",
       "comments": 3,
       "liked": 10
     },
     {
+      "postId": "cieloPost007",
       "thumbnailSrc": "./assets/images/posting010.png",
       "comments": 3,
       "liked": 10

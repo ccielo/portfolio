@@ -41,11 +41,11 @@ export const routePathList = [
     icon: react,
   },
   {
-    pathName: 'calc',
+    pathName: 'todo',
     icon: barcelona,
   },
   {
-    pathName: 'todo',
+    pathName: 'sns',
     icon: seoul,
   },
 ];

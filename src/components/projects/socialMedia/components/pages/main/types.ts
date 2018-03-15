@@ -1,3 +1,16 @@
+export interface ContentsProperty {
+  comments: number;
+  liked: number;
+  postId: string;
+  thumbnailSrc: string;
+}
+
+export interface ContentModalProps {
+  isShow: boolean;
+  content: ContentsProperty;
+  toggleModal: () => void;
+}
+
 export interface ProfileElements {
   user_id: string;
   imgSrc: string;
@@ -27,6 +40,7 @@ export interface ProfileHeaderProps {
 }
 
 export interface PostImageProperties {
+  postId: string;
   thumbnailSrc: string;
   comments: number;
   liked: number;
@@ -34,4 +48,5 @@ export interface PostImageProperties {
 
 export interface GridListProps {
   postImageList: Array<PostImageProperties>;
+  onClick: (selected: number) => void;
 }

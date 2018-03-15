@@ -3,6 +3,7 @@ import { ProfileElements, INFO_TYPE } from './types';
 import ProfileHeader from './components/profileHeader';
 import GridList from './components/gridList';
 import Line from '../../atoms/line';
+import ContentModal from './components/contentModal/';
 
 interface MainProps {
 }
@@ -10,6 +11,8 @@ interface MainProps {
 interface MainStates {
   profile: ProfileElements;
   tab: number;
+  isShow: boolean;
+  selected: number;
 }
 
 class Main extends React.Component<MainProps, MainStates> {
@@ -27,7 +30,11 @@ class Main extends React.Component<MainProps, MainStates> {
         list: [],
       },
       tab: 0,
+      isShow: true,
+      selected: 0,
     };
+    this.onSelectPost = this.onSelectPost.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
@@ -35,9 +42,17 @@ class Main extends React.Component<MainProps, MainStates> {
     this.setState({profile: profileData});
   }
 
+  onSelectPost(selected: number) {
+    this.setState({ selected: selected, isShow: true });
+  }
+
+  toggleModal() {
+    this.setState({isShow: !this.state.isShow});
+  }
+
   render() {
     const profileImage = require('../../../../../../assets/images/instaProfile.jpg');
-    const {profile} = this.state;
+    const {profile, isShow, selected} = this.state;
     const ArrayCounting = [
       {label: INFO_TYPE.posts, number: profile.posts},
       {label: INFO_TYPE.followers, number: profile.followers},
@@ -47,7 +62,8 @@ class Main extends React.Component<MainProps, MainStates> {
       <div style={{width: '833px'}}>
         <ProfileHeader profileImage={profileImage} profile={profile} ArrayCounting={ArrayCounting} />
         <Line color="gray" thickness={1} length="100%" />
-        <GridList postImageList={this.state.profile.list} />
+        <GridList postImageList={profile.list} onClick={this.onSelectPost} />
+        <ContentModal isShow={isShow} content={profile.list[selected]} toggleModal={this.toggleModal} />
       </div>
     );
   }

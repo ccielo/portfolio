@@ -16,7 +16,7 @@ function GridList (props: GridListProps) {
   return(
     <div style={styles.gridList}>
       {props.postImageList.map((postImage: PostImageProperties, index) =>
-      <div key={`post-${index}`} style={{marginBottom: 28}}>
+      <div key={`post-${index}`} onClick={() => props.onClick(index)} style={{marginBottom: 28}}>
         <PostImage
           src={postImage.thumbnailSrc}
           size={259}

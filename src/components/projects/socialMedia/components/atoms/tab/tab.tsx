@@ -1,32 +1,23 @@
 import * as React from 'react';
-
-interface TabProps {
-  onSelect: (value: number) => void;
-  arrayList: Array<ArrayListProperties>;
-}
-
-interface TabState {
-  arrayList: Array<ArrayListProperties>;
-  selected: number;
-}
-
-interface ArrayListProperties {
-  label: string;
-  children: React.ReactNode;
-}
+import { TabProps, TabState } from './types';
+import { LabelListComponent, ContentComponent } from './components/components';
 
 class Tab extends React.Component<TabProps, TabState> {
   constructor(props: TabProps) {
     super(props);
     this.state = {
       selected: 0,
-      arrayList: [],
+      labelList: [],
+      childrenList: [],
     };
     this.toggleTab = this.toggleTab.bind(this);
   }
 
   public componentDidMount () {
-    this.setState({arrayList: this.props.arrayList});
+    this.setState({
+      labelList: this.props.labelList,
+      childrenList: this.props.childrenList,
+    });
   }
 
   toggleTab (value: number) {
@@ -35,30 +26,11 @@ class Tab extends React.Component<TabProps, TabState> {
   }
 
   public render(): JSX.Element {
-    const {arrayList, selected} = this.state;
-    console.log(arrayList, 'array');
+    const {labelList, selected, childrenList} = this.state;
     return (
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        {arrayList.map((tab, index) => {
-          if (index === selected) {
-            return (
-              <div key={`tab-${index}`}>
-                <p style={{margin: 0, color: 'red', cursor: 'default'}} onClick={() => this.toggleTab(index)}>{tab.label}</p>
-              </div>
-              );
-            } else {
-              return(
-                <p 
-                  key={`tab-${index}`}
-                  style={{margin: 0, color: 'blue', cursor: 'default'}}
-                  onClick={() => this.toggleTab(index)}
-                >
-                  {tab.label}
-                </p>
-              );
-            }
-          })
-        }
+      <div>
+        <LabelListComponent selected={selected} labelList={labelList} toggleTab={this.toggleTab} />
+        <ContentComponent childrenList={childrenList[selected]} />
       </div>
     );
   }

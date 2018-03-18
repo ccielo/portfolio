@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ContentModalProps, } from './types';
 import styles from './styles';
-import { UserProfileContainer, MessageBox, IconListContainer, LikeListContainer } from './components/components';
+import { UserProfileContainer, ContentBox, UserActionBox } from './components/components';
 import Modal from '../../../../molecules/modal';
 
 const postObj = {
@@ -39,21 +39,13 @@ const postObj = {
 function ContentModal(props: ContentModalProps) {
   const { isShow } = props;
   return(
-    <Modal
-      isShow={isShow}
-      onClick={props.toggleModal}
-      modalStyles={{
-        width: '793px',
-        height: '573px',
-      }}
-    >
+    <Modal isShow={isShow} onClick={props.toggleModal} modalStyles={styles.modalStyles}>
       <div style={styles.container} onClick={props.toggleModal}>
         <img height="573px" width="410px" src={postObj.postImage} />
         <div style={styles.information}>
           <UserProfileContainer author={postObj.author} profileImg={postObj.profileImage} />
-          <MessageBox author={postObj.author} message={postObj.message} />
-          <IconListContainer />
-          <LikeListContainer likeList={postObj.likeList} />
+          <ContentBox author={postObj.author} message={postObj.message} commentList={postObj.commentList} />
+          <UserActionBox likeList={postObj.likeList} />
         </div>
       </div>
     </Modal>

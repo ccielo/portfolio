@@ -16,9 +16,31 @@ export interface UserProfileProperties {
   author: string;
 }
 
+// contentBox properties
+export interface ContentBoxProps {
+  message: string;
+  author: string;
+  commentList: Array<CommentListProperties>;
+}
+
 export interface MessageBoxProperties {
   message: string;
   author: string;
+}
+
+export interface CommentListProps {
+  commentList: Array<CommentListProperties>;
+}
+
+interface CommentListProperties {
+  commentId: string;
+  comment: string;
+  eventTime: number;
+}
+
+// ActionBox properties
+export interface UserActionBoxProperties {
+  likeList: Array<LikeListProperties>;
 }
 
 export interface IconListProperties {

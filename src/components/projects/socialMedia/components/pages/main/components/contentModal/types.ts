@@ -41,6 +41,7 @@ interface CommentListProperties {
 // ActionBox properties
 export interface UserActionBoxProperties {
   likeList: Array<LikeListProperties>;
+  postTime: number;
 }
 
 export interface IconListProperties {

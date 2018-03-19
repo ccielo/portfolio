@@ -4,6 +4,8 @@ import { UserProfileProperties, MessageBoxProperties, ContentBoxProps,
 } from '../types';
 import styles from '../styles';
 import Image from '../../../../../atoms/image';
+import * as moment from 'moment';
+import { IconButton, ICON_TYPE } from '../../../../../atoms/button/button';
 
 export function UserProfileContainer (props: UserProfileProperties) {
   return(
@@ -42,7 +44,13 @@ function CommentList (props: CommentListProps) {
             <p style={{...styles.userId, marginRight: 10}}>{comment.commentId}</p>
             <p style={styles.basicText}>{comment.comment}</p>
           </div>
-            <p onClick={() => alert('delete')} style={{...styles.basicText, flex: 0.05, cursor: 'pointer'}}>X</p>
+          <div style={{flex: 0.05}}>
+            <IconButton
+              size={15}
+              src={ICON_TYPE.CLOSE}
+              onClick={() => alert('delete')}
+            />
+          </div>
           </div>
         );
       })}
@@ -55,7 +63,7 @@ export function UserActionBox (props: UserActionBoxProperties) {
     <div style={styles.borderBottomLine}>
       <IconListContainer />
       <LikeListContainer likeList={props.likeList} />
-      <p style={{margin: 0}}>eventstamp</p>
+      <p style={{margin: 0}}>{moment(props.postTime).startOf('day').fromNow()}</p>
     </div>
   );
 }
@@ -64,10 +72,23 @@ export function IconListContainer (props: IconListProperties) {
   return(
     <div style={styles.iconListContainer}>
       <div style={{display: 'flex', flexDirection: 'row'}}>
-        <p onClick={() => alert('heart')} style={{margin: 0, padding: 0, cursor: 'pointer'}}>heart</p>
-        <p onClick={() => alert('comment')} style={{margin: 0, padding: 0, marginLeft: 8, cursor: 'pointer'}}>comment</p>
+      <IconButton
+        size={20}
+        src={ICON_TYPE.UNFILLHEART}
+        onClick={() => alert('heart')}
+      />
+      <IconButton
+        size={20}
+        src={ICON_TYPE.COMMENT}
+        onClick={() => alert('comment')}
+        styles={{marginLeft: '10px'}}
+      />
       </div>
-      <p onClick={() => alert('bookmark')} style={{margin: 0, padding: 0, cursor: 'pointer'}}>bookmark</p>
+      <IconButton
+        size={30}
+        src={ICON_TYPE.BOOKMARK}
+        onClick={() => alert('bookmark')}
+      />
     </div>
   );
 }

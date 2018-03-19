@@ -3,6 +3,7 @@ import { ContentModalProps, } from './types';
 import styles from './styles';
 import { UserProfileContainer, ContentBox, UserActionBox } from './components/components';
 import Modal from '../../../../molecules/modal';
+import Input from '../../../../atoms/input';
 
 const postObj = {
   postImage: require('../../../../../../../../assets/images/postImage001.jpeg'),
@@ -12,25 +13,30 @@ const postObj = {
   eventTime: 1521122794,
   likeList: [
     {
-      likerId: 'dali310',
-      url: '/dali310',
+      likerId: 'a_user',
+      url: '/a_user',
       eventTime: 1521122794,
     },
     {
-      likerId: 'lovee_dandan',
-      url: '/lovee_dandan',
+      likerId: 'b_user',
+      url: '/b_user',
       eventTime: 1521122794,
     },
     {
-      likerId: 'comets_195',
-      url: '/comets_195',
+      likerId: 'c_user',
+      url: '/c_user',
       eventTime: 1521122794,
     },
   ],
   commentList: [
     {
-      commentId: 'comets_195',
+      commentId: 'c_user',
       comment: '어디에요?',
+      eventTime: 1521122794,
+    },
+    {
+      commentId: 'b_user',
+      comment: '카페인듯?',
       eventTime: 1521122794,
     },
   ],
@@ -45,7 +51,8 @@ function ContentModal(props: ContentModalProps) {
         <div style={styles.information}>
           <UserProfileContainer author={postObj.author} profileImg={postObj.profileImage} />
           <ContentBox author={postObj.author} message={postObj.message} commentList={postObj.commentList} />
-          <UserActionBox likeList={postObj.likeList} />
+          <UserActionBox likeList={postObj.likeList} postTime={postObj.eventTime} />
+          <Input placeholder="댓글달기 ..." />
         </div>
       </div>
     </Modal>

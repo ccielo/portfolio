@@ -61,8 +61,19 @@ class Main extends React.Component<MainProps, MainStates> {
     super(props);
     this.state = {
       issueList: issueList,
+      test: 0,
     };
     this.toggleExpending = this.toggleExpending.bind(this);
+    console.log('here is constructor', this.state.test);
+  }
+
+  componentWillMount() {
+    console.log('here is componentWillMount', this.state.test);
+  }
+
+  componentDidMount() {
+      // this.setState({test: 1});
+      console.log('here is componentDidMount', this.state.test);
   }
 
   toggleExpending(key: number, value: boolean) {
@@ -76,6 +87,7 @@ class Main extends React.Component<MainProps, MainStates> {
   }
 
   render() {
+    console.log('here is render', this.state.test);
     return (
         <div>
           <Header

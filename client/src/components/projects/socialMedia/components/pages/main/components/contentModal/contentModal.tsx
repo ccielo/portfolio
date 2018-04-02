@@ -45,7 +45,7 @@ const postObj = {
 function ContentModal(props: ContentModalProps) {
   const { isShow } = props;
   return(
-    <Modal isShow={isShow} onClick={props.toggleModal} modalStyles={styles.modalStyles}>
+    <Modal isShow={isShow} onCloseRequest={props.toggleModal} modalStyles={styles.modalStyles}>
       <div style={styles.container} onClick={props.toggleModal}>
         <img height="573px" width="410px" src={postObj.postImage} />
         <div style={styles.information}>

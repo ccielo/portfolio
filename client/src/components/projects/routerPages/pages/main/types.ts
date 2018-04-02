@@ -21,4 +21,5 @@ export interface IssueListType {
 
 export interface MainStates {
   issueList: Array<IssueListType>;
+  test: number;
 }

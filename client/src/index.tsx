@@ -6,10 +6,11 @@ import createHistory from 'history/createBrowserHistory';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './redux/reducers';
+import rootReducer from './redux/modules';
 
 const history = createHistory();
 const store = createStore(rootReducer);
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>

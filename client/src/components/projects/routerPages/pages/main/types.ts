@@ -20,6 +20,7 @@ export interface IssueListType {
 }
 
 export interface MainStates {
-  issueList: Array<IssueListType>;
-  test: number;
+  textValue: string;
+  focus: boolean;
+  error: boolean;
 }

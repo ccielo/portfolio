@@ -10,7 +10,6 @@ function TextField (props: TextFieldProps) {
         placeholder={props.placeholder}
         style={{
           height: '20px',
-          width: '100%',
         }}
         value={props.value}
         onChange={props.onChange}
@@ -21,6 +20,7 @@ function TextField (props: TextFieldProps) {
             props.onPressEnter();
           }
         }}
+        type={props.security ? 'password' : 'value'}
       />
     </div>
   );
@@ -54,8 +54,9 @@ class Input extends React.Component<InputProps, InputState> {
   }
 
   public render(): JSX.Element {
-    const { type, label, placeholder, error, errorMessage} = this.props;
-    const { value, focus, enter} = this.state;
+    const { type, label, placeholder, error, errorMessage, security} = this.props;
+    // const { value, focus, enter} = this.state;
+    const { value } = this.state;
     return (
       <div>
         {type === 'search' ? 'icon' : ''}
@@ -74,6 +75,7 @@ class Input extends React.Component<InputProps, InputState> {
           onToggleFocus={this.onToggleFocus}
           onPressEnter={this.onPressEnter}
           error={error}
+          security={security}
         />
         <p
           style={{
@@ -83,8 +85,9 @@ class Input extends React.Component<InputProps, InputState> {
         >
           {error && errorMessage !== '' && errorMessage}
         </p>
+        {/* security: {security ? <p style={{margin : 0, color: 'blue'}}>security On</p> : <p style={{margin : 0, color: 'red'}}>security OFF</p>}
         포커스: {focus ? <p style={{margin : 0, color: 'blue'}}>focus On</p> : <p style={{margin : 0, color: 'red'}}>focus OFF</p>}
-        엔터키: {enter ? <p style={{margin : 0, color: 'blue'}}>Enter On</p> : <p style={{margin : 0, color: 'red'}}>enter OFF</p>}
+        엔터키: {enter ? <p style={{margin : 0, color: 'blue'}}>Enter On</p> : <p style={{margin : 0, color: 'red'}}>enter OFF</p>} */}
       </div>
     );
   }

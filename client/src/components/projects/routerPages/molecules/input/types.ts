@@ -7,6 +7,7 @@ export interface InputProps {
   onSave: (value: string) => void;
   errorMessage?: string;
   error?: boolean;
+  security?: boolean;
 }
 
 export interface InputState {
@@ -21,4 +22,5 @@ export interface TextFieldProps {
   onToggleFocus: () => void;
   onPressEnter: () => void;
   error?: boolean;
+  security?: boolean;
 }

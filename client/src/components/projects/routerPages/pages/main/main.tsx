@@ -30,6 +30,12 @@ class Main extends React.Component<MainProps, MainStates> {
             errorMessage="error message"
           />
           상위 컴포넌트 결과값: {this.state.textValue}
+          <ol>
+            <li>로그인[한개 타입] - 버튼을 눌렀을때 결과값 제공</li>
+            <li>로그인[한개 타입] - 누를때마다 결과값 제공</li>
+            <li>회원가입[여러개 input 타입]</li>
+            <li>가격 입력창</li>
+          </ol>
         </div>
     );
   }
